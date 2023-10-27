@@ -12,8 +12,10 @@ spec:
       labels:
         app: react-docker
     spec:
+      terminationGracePeriodSeconds: 30
       containers:
       - name: react-docker
-        image: prakhards98/react-docker
+        image: prakhards98/jenkins-react
+        imagePullPolicy: "Always"
         ports:
         - containerPort: 80
