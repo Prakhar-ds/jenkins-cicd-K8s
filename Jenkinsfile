@@ -28,7 +28,10 @@ pipeline {
         // script {
         //   kubernetesDeploy(configs: "deployment.yml", "loadbalancer.yml")
         // }
-        sh 'kubectl apply -f deployment.yml'
+        // sh 'kubectl apply -f deployment.yml'
+         withKubeConfig([credentialsId: 'kubeconfig']) {
+             sh 'kubectl apply -f deployment.yml'
+        }
       }
     }
   }
