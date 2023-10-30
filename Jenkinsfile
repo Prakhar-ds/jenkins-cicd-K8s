@@ -22,6 +22,14 @@ pipeline {
         sh 'docker push prakhards98/jenkins-react'
       }
     }
+
+    stage('Deploying React.js container to K8s') {
+      steps {
+        script {
+          kubernetesDeploy(configs: "deployment.yml", "loadbalancer.yml")
+        }
+      }
+    }
   }
   post {
     always {

@@ -15,7 +15,7 @@ spec:
       terminationGracePeriodSeconds: 30
       containers:
       - name: react-docker
-        image: prakhards98/jenkins-react
+        image: prakhards98/jenkins-react:latest
         imagePullPolicy: "Always"
         ports:
         - containerPort: 80
