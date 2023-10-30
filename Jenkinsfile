@@ -25,9 +25,10 @@ pipeline {
 
     stage('Deploying React.js container to K8s') {
       steps {
-        script {
-          kubernetesDeploy(configs: "deployment.yml", "loadbalancer.yml")
-        }
+        // script {
+        //   kubernetesDeploy(configs: "deployment.yml", "loadbalancer.yml")
+        // }
+        sh 'kubectl apply -f deployment.yml'
       }
     }
   }
