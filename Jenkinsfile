@@ -30,7 +30,7 @@ pipeline {
         // }
         // sh 'kubectl apply -f deployment.yml'
          withKubeConfig([credentialsId: 'kubeconfig']) {
-             sh 'kubectl apply -f deployment.yml'
+             sh '/usr/local/bin/kubectl apply -f deployment.yml --kubeconfig=~/.kube/config'
         }
       }
     }
