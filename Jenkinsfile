@@ -1,6 +1,8 @@
 pipeline {
   agent {
-    label 'docker-agent'
+   docker{
+label 'docker-agent'
+   } 
   }
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
